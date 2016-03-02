@@ -383,7 +383,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wificond \
     WifiOverlay \
     wpa_supplicant \
