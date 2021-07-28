@@ -380,7 +380,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcld80211 \
-    libQWiFiSoftApCfg \
     libwifi-hal-ctrl \
     libwpa_client \
     hostapd \
