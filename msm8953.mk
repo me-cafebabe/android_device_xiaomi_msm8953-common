@@ -136,6 +136,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml
 
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@2.0.vendor
+
 # DPM
 PRODUCT_PACKAGES += \
     libcutils_shim
