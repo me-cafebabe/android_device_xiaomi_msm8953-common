@@ -1,3 +1,14 @@
+# Acdbdata
+service vendor.acdbdata-sh /vendor/bin/init.acdbdata.sh
+    class hal
+    user system
+    group system
+    oneshot
+
+on property:persist.vendor.audio.calfile0=*
+    exec /bin/sleep 1s
+    restart vendor.audio-hal
+
 # DT2W
 on boot
     chown system system /sys/touchpanel/double_tap

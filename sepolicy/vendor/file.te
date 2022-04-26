@@ -4,6 +4,10 @@ type proc_boot_reason, fs_type, proc_type;
 # Camera
 type camera_socket, file_type, data_file_type;
 
+# FDT
+type fdt_compatible, fs_type, sysfs_type;
+type fdt_sound, fs_type, sysfs_type;
+
 # Fingerprint
 type fingerprint_data_file, file_type, core_data_file_type, data_file_type;
 type fingerprint_socket, file_type;
