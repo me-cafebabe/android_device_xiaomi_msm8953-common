@@ -9,6 +9,10 @@ on boot
     enable vendor.qcrild
     enable vendor.qcrild2
 
+# Time
+on property:sys.boot_completed=1
+    restart time_daemon
+
 # Wifi
 on init
     chown wifi wifi /sys/module/wlan/parameters/fwpath
