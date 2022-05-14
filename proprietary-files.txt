@@ -521,9 +521,9 @@ vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
 # Perf (System)
+#-system_ext/app/workloadclassifier/workloadclassifier.apk
 system/framework/QPerformance.jar
 system/framework/UxPerformance.jar
--system_ext/app/workloadclassifier/workloadclassifier.apk
 system_ext/bin/perfservice
 system_ext/etc/init/perfservice.rc
 system_ext/etc/perf/wlc_model.tflite
