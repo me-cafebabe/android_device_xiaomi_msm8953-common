@@ -64,7 +64,7 @@ function blob_fixup() {
             sed -i 's/version="2.0"/version="1.0"/g' "${2}"
             ;;
         system_ext/lib64/lib-imscamera.so)
-            "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+            grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             ;;
     esac
 }
