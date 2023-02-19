@@ -20,6 +20,7 @@
 #include <hardware/hw_auth_token.h>
 
 #include <android-base/strings.h>
+#include <android-base/properties.h>
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
@@ -43,8 +44,11 @@ typedef struct hw_module_info {
     std::string class_name;
 } hw_module_info_t;
 
-static const hw_module_info_t kHALModules[] = {
+static const hw_module_info_t kFPCHALModules[] = {
     {FINGERPRINT_HARDWARE_MODULE_ID, "fpc"},
+};
+
+static const hw_module_info_t kGoodixHALModules[] = {
     {FINGERPRINT_HARDWARE_MODULE_ID, "goodix"},
     {"gf_" FINGERPRINT_HARDWARE_MODULE_ID, "goodix"},
 };
@@ -57,16 +61,33 @@ using ::android::base::StartsWith;
 BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
+    std::string prop_fpsensor = android::base::GetProperty("ro.boot.fpsensor", "");
+    ALOGI("Property ro.boot.fpsensor = %s", prop_fpsensor.c_str());
     sInstance = this; // keep track of the most recent instance
-    for (const auto& HMI : kHALModules) {
-        mDevice = openHal(HMI.id_name.c_str(), HMI.class_name.c_str());
-        if (!mDevice) {
-            ALOGE("Can't open HAL module, module ID %s, class name %s",
-                    HMI.id_name.c_str(), HMI.class_name.c_str());
-        } else {
-            ALOGI("Opened fingerprint HAL, module ID %s, class name %s",
-                    HMI.id_name.c_str(), HMI.class_name.c_str());
-            break;
+    if (prop_fpsensor == "fpc" || prop_fpsensor.empty()) {
+        for (const auto& HMI : kFPCHALModules) {
+            mDevice = openHal(HMI.id_name.c_str(), HMI.class_name.c_str());
+            if (!mDevice) {
+                ALOGE("Can't open FPC HAL module, module ID %s, class name %s",
+                        HMI.id_name.c_str(), HMI.class_name.c_str());
+            } else {
+                ALOGI("Opened FPC fingerprint HAL, module ID %s, class name %s",
+                        HMI.id_name.c_str(), HMI.class_name.c_str());
+                break;
+            }
+        }
+    }
+    if (prop_fpsensor == "gdx" || prop_fpsensor.empty()) {
+        for (const auto& HMI : kGoodixHALModules) {
+            mDevice = openHal(HMI.id_name.c_str(), HMI.class_name.c_str());
+            if (!mDevice) {
+                ALOGE("Can't open Goodix HAL module, module ID %s, class name %s",
+                        HMI.id_name.c_str(), HMI.class_name.c_str());
+            } else {
+                ALOGI("Opened Goodix fingerprint HAL, module ID %s, class name %s",
+                        HMI.id_name.c_str(), HMI.class_name.c_str());
+                break;
+            }
         }
     }
 }
