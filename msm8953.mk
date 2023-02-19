@@ -315,7 +315,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.0.vendor \
     librmnetctl \
-    libcnefeatureconfig \
     libxml2
 
 # Sensors
