@@ -338,8 +338,10 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Thermal
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_THERMAL_ENGINE_CONF),true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+endif
 
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti.xiaomi_msm8953
