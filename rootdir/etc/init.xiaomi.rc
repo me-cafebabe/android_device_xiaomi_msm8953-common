@@ -4,6 +4,11 @@ on boot
     chown system system /proc/touchpanel/wakeup_gesture
     chmod 0660 /proc/touchpanel/wakeup_gesture
 
+# RIL
+on boot
+    enable vendor.qcrild
+    enable vendor.qcrild2
+
 # Wifi
 on init
     chown wifi wifi /sys/module/wlan/parameters/fwpath
