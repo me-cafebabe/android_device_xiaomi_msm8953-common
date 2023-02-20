@@ -146,6 +146,9 @@ endif
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Rootdir
 ifeq ($(AB_OTA_UPDATER), true)
 $(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,ab)
