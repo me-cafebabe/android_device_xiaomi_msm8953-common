@@ -1,0 +1,10 @@
+- Move new props between system/vendor
+- Regen manifest
+- Builds libs from source
+- Build new dependency libs
+- Reorder proprietary-files
+- S Bringup on blobs
+- Decommonize Graphics
+- Decommonize uceService
+- Decommonize dirac adsp?
+- Update device specific gk/km
