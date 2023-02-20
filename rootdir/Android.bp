@@ -1,0 +1,50 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// fstab
+
+soong_config_module_type {
+    name: "xiaomi_msm8953_rootdir_prebuilt_etc",
+    module_type: "prebuilt_etc",
+    config_namespace: "XIAOMI_MSM8953_ROOTDIR",
+    variables: ["PARTITION_SCHEME"],
+    properties: ["src"],
+}
+
+soong_config_string_variable {
+    name: "PARTITION_SCHEME",
+    values: ["a", "ab", "legacy"],
+}
+
+xiaomi_msm8953_rootdir_prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    soong_config_variables: {
+        PARTITION_SCHEME: {
+            a: {
+                src: "etc/fstab.qcom",
+            },
+            ab: {
+                src: "etc/fstab_AB.qcom",
+            },
+            legacy: {
+                src: "etc/fstab_legacy.qcom",
+            },
+        },
+    },
+    vendor: true,
+}
+
+// Init scripts
+
+// Init configuration files
+
+prebuilt_etc {
+    name: "init.xiaomi.rc",
+    src: "etc/init.xiaomi.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
