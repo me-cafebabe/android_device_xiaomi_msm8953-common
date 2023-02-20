@@ -1,0 +1,5 @@
+# DT2W
+on boot
+    chown system system /sys/touchpanel/double_tap
+    chown system system /proc/touchpanel/wakeup_gesture
+    chmod 0660 /proc/touchpanel/wakeup_gesture
