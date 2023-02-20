@@ -131,6 +131,15 @@ endif
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Rootdir
+ifeq ($(AB_OTA_UPDATER), true)
+$(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,ab)
+else ifeq ($(TARGET_IS_LEGACY), true)
+$(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,legacy)
+else
+$(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,a)
+endif
+
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
