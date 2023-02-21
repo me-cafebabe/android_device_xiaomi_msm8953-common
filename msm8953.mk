@@ -199,6 +199,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6 \
     vendor.qti.hardware.camera.device@1.0
 
+PRODUCT_PACKAGES += \
+    libshim_imsvideocodec
+
 # Input
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.kl,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
