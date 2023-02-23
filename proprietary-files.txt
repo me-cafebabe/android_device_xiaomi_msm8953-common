@@ -1,6 +1,7 @@
 # All unpinned blobs below are extracted from Fairphone/FP3/FP3:11/8901.4.A.0010/gms-f74c58a8:user/release-keys
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM release-keys
 # mido Package version: mido-user 7.0 NRD90M V11.0.2.0.NCFMIXM release-keys
+# PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -64,15 +65,17 @@ lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead0
 lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so|f63826a905b520fa524e4c1b147be7cf65240953
 vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
-# Bluetooth
+# Bluetooth & FM - from PAN
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # CACert
 -vendor/app/CACertService/CACertService.apk
