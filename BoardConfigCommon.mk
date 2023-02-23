@@ -86,7 +86,7 @@ LOC_HIDL_VERSION := 3.0
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml $(COMMON_PATH)/manifest_custom.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
