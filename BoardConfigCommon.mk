@@ -96,6 +96,11 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+ifeq ($(TARGET_HAS_LEGACY_MODEM),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/radioconfig-1-0.xml
+else
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/radioconfig-1-1.xml
+endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
