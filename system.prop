@@ -24,13 +24,6 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-#
-# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
-#
-#//<2019/03/13-LucyGao,Update "Preferred network type" list.
-#ro.telephony.default_network=22,20
-ro.telephony.default_network=20,20
-#//>2019/03/13,LucyGao.
 
 #ro.hdmi.enable=true
 
@@ -70,11 +63,6 @@ persist.timed.enable=true
 #system prop for Bluetooth SOC type
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.enable.splita2dp=false
-
-#
-# System props for telephony
-# System prop to turn on CdmaLTEPhone always
-telephony.lteOnCdmaDevice=1
 
 #
 # System props for bluetooh
@@ -140,9 +128,7 @@ persist.radio.vrte_logic=1
 persist.radio.domain.ps=false
 persist.rcs.supported=0
 persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
 persist.data.iwlan.enable=true
-persist.dbg.wfc_avail_ovr=1
 # - 2020/05/11, End - Henry Lin. Enable IMS VoLTE&WFC properties
 
 # End.# end of device/fairphone/FP3/system.prop
