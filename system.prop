@@ -35,7 +35,6 @@ debug.sf.latch_unsignaled=1
 debug.egl.hw=0
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
-dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
@@ -54,7 +53,6 @@ mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 av.debug.disable.pers.cache=1
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 #minimum duration for offload playback in secs
 audio.offload.min.duration.secs=30
@@ -117,9 +115,6 @@ persist.debug.coresight.config=stm-events
 #selects Console configuration to enable
 persist.console.silent.config=1
 
-#prefer HW codec over SW for thumbnail
-media.stagefright.thumbnail.prefer_hw_codecs=true
-
 # Additional buffers shared between Camera and Video
 vidc.enc.dcvs.extra-buff-count=2
 
@@ -168,6 +163,4 @@ persist.data.iwlan.enable=true
 persist.dbg.wfc_avail_ovr=1
 # - 2020/05/11, End - Henry Lin. Enable IMS VoLTE&WFC properties
 
-# Add new property
-ro.com.google.clientidbase=android-uniscope
 # End.# end of device/fairphone/FP3/system.prop
