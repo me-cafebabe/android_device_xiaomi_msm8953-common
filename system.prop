@@ -29,22 +29,6 @@ DEVICE_PROVISIONED=1
 ro.telephony.default_network=20,20
 #//>2019/03/13,LucyGao.
 
-debug.sf.enable_hwc_vds=1
-debug.sf.hw=0
-debug.sf.latch_unsignaled=1
-debug.egl.hw=0
-persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-debug.enable.sglscale=1
-debug.gralloc.enable_fb_ubwc=1
-debug.sf.recomputecrop=0
-debug.sf.disable_backpressure=1
-
-#Disable Skip Validate
-sdm.debug.disable_skip_validate=1
-
 #ro.hdmi.enable=true
 
 #system props for the MM modules
@@ -84,9 +68,6 @@ persist.timed.enable=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.enable.splita2dp=false
 
-# System property for cabl
-ro.qualcomm.cabl=2
-
 #
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
@@ -106,8 +87,6 @@ ro.fm.transmitter=false
 
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
-#property to enable VDS WFD solution
-persist.hwc.enable_vds=1
 
 #selects CoreSight configuration to enable
 persist.debug.coresight.config=stm-events
