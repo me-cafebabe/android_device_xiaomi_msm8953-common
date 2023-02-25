@@ -1,3 +1,19 @@
+# Audio
+audio.chk.cal.us=0
+audio.offload.disable=false
+ro.audio.soundfx.dirac=true
+
+# Charger
+ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
+
+# Display
+persist.demo.hdmirotationlock=false
+persist.hwc.enable_vds=1
+persist.hwc.mdpcomp.enable=true
+ro.qualcomm.cabl=2
+sdm.debug.disable_skip_validate=1
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
