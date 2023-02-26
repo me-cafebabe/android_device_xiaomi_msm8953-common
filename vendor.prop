@@ -117,6 +117,7 @@ ro.hardware.keystore_desede=true
 # Media
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
+media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.vidc.dec.downscalar_height=1088
 vendor.vidc.dec.downscalar_width=1920
 vendor.vidc.disable.split.mode=1
