@@ -139,6 +139,8 @@ ifeq ($(AB_OTA_UPDATER), true)
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB.qcom
 else ifeq ($(TARGET_IS_LEGACY), true)
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_legacy.qcom
+else ifeq ($(BOARD_BUILD_SYSTEM_ROOT_IMAGE), true)
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_SAR.qcom
 else
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 endif
@@ -150,6 +152,8 @@ ifeq ($(AB_OTA_UPDATER), true)
 $(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,ab)
 else ifeq ($(TARGET_IS_LEGACY), true)
 $(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,legacy)
+else ifeq ($(BOARD_BUILD_SYSTEM_ROOT_IMAGE), true)
+$(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,a_sar)
 else
 $(call soong_config_set,XIAOMI_MSM8953_ROOTDIR,PARTITION_SCHEME,a)
 endif

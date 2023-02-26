@@ -16,7 +16,7 @@ soong_config_module_type {
 
 soong_config_string_variable {
     name: "PARTITION_SCHEME",
-    values: ["a", "ab", "legacy"],
+    values: ["a", "ab", "a_sar", "legacy"],
 }
 
 xiaomi_msm8953_rootdir_prebuilt_etc {
@@ -29,6 +29,9 @@ xiaomi_msm8953_rootdir_prebuilt_etc {
             },
             ab: {
                 src: "etc/fstab_AB.qcom",
+            },
+            a_sar: {
+                src: "etc/fstab_SAR.qcom",
             },
             legacy: {
                 src: "etc/fstab_legacy.qcom",
