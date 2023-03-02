@@ -377,8 +377,10 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # Vibrator
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_VIBRATOR),true)
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
+endif
 
 # Whitelisted app
 PRODUCT_COPY_FILES += \
