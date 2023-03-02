@@ -342,6 +342,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
+# Subsystem state notifier
+PRODUCT_PACKAGES += \
+    subsystem_state_notifier
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \

@@ -7,10 +7,13 @@ on boot
     chmod 0660 /proc/touchpanel/wakeup_gesture
 
 # RIL
-on boot
-    # Enable qcrild
-    enable vendor.qcrild
-    enable vendor.qcrild2
+on property:vendor.subsys_state_notifier.modem.state=OFFLINE
+    stop vendor.qcrild
+    stop vendor.qcrild2
+
+on property:vendor.subsys_state_notifier.modem.state=ONLINE
+    start vendor.qcrild
+    start vendor.qcrild2
 
 # Subsystem Restart
 on init
