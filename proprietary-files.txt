@@ -748,11 +748,12 @@ system_ext/etc/permissions/uimremoteserver.xml
 system_ext/framework/uimremoteserverlibrary.jar
 system_ext/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/etc/init/init_thermal-engine.rc
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+# Thermal - from daisy
+vendor/bin/thermal-engine|4ab3c410fbcf9f8cae711ea4ba16cd2797712de6
+vendor/lib/libthermalclient.so|6077e27e15d9e3e43fa57d6d5405c49284f48949
+vendor/lib64/libthermalclient.so|12b26d4242b1a8913ddcb511f42a1debb83689af
+vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
+vendor/lib64/libthermalioctl.so|24b22582f3f77769c5fbca06fcc1d3b6533cdf40
 
 # Time
 -vendor/app/TimeService/TimeService.apk
